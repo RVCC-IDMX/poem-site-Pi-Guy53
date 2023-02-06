@@ -2,15 +2,63 @@
 @use "../abstracts/variables" as var;
 @use "../base/typography" as type;
 
+/*
+My clamp
+https: //clamp.font-size.app/
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  font-family: type.$font;
-  background-color: var.$bg-very-light;
-  width: min(100% - 2rem, 60ch);
-  margin-inline: auto;
-  margin-block: 4rem;
+  color: hsl(73deg 100% 83%);
+  background-image: url("../../images/ginevra-austine-tER9lXuV2yM-unsplash.jpg");
+  backdrop-filter: blur(2px) brightness(0.8);
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  padding-top: 4rem;
 }
 
 h1 {
-  color: var.$primary-color;
+  font-size: clamp(2rem, 0.4762rem + 7.619vw, 10rem);
+}
+
+h2 {
+  font-size: clamp(1.25rem, 0.7262rem + 2.619vw, 4rem);
+}
+
+.mainContent {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  justify-items: center;
+}
+
+.title {
+  font-family: 'Marck Script', cursive;
   text-align: center;
+}
+
+.text {
+  font-family: 'Libre Baskerville', serif;
+  font-size: clamp(1.125rem, 0.9583rem + 0.8333vw, 2rem);
+  line-height: 1.9;
+}
+
+.credits {
+  font-family: 'Libre Baskerville', serif;
+  font-size: clamp(0.75rem, 0.6071rem + 0.7143vw, 1.5rem);
+  padding: 2rem 0;
+}
+
+a {
+  color: inherit;
+}
+
+a:visited {
+  color: inherit;
 }
